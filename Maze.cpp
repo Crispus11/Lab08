@@ -74,21 +74,11 @@ bool Maze::traverse(int row, int col)
 
       if (!done)
       {
-         if (traverse(row - 1, col) done = true;
-         if (traverse(row, col + 1) done = true;
-         if (traverse(row + 1, col) done = true;
-         if (traverse(row, col - 1) done = true;
+         if (traverse(row - 1, col)) done = true;
+         else if (traverse(row, col + 1)) done = true;
+         else if (traverse(row + 1, col)) done = true;
+         else if (traverse(row, col - 1)) done = true;
       }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -100,7 +90,7 @@ bool Maze::traverse(int row, int col)
          //DO THIS
          //mark the path taken as the solution path
 
-
+         maze->setElement(row, col, PATH);
 
          gui->update();
       }
@@ -109,7 +99,7 @@ bool Maze::traverse(int row, int col)
       {
          //DO THIS
 
-
+         maze->setElement(row, col, BACKTRACK);
 
          Sleep(75);
          gui->update();
